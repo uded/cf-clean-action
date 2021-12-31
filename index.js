@@ -1,7 +1,7 @@
 import core from '@actions/core';
 import github from '@actions/github';
 import got from 'got';
-import forEach from 'lodash.forEach';
+import forEach from 'lodash';
 
 try {
     const request = {
