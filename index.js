@@ -20,6 +20,8 @@ try {
 
     const {result} = got.get(deployments_endpoint_base, request).json();
 
+    console.log('Result', result);
+
     forEach(result, (function (deploy) {
         console.log(deploy.id, deploy.environment, deploy.deployment_trigger.metadata.branch);
     }));
