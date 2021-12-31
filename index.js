@@ -1,7 +1,7 @@
 import core from '@actions/core';
 import github from '@actions/github';
 import got from 'got';
-// const forEach = require('lodash.forEach');
+import forEach from 'lodash.forEach';
 
 try {
     const request = {
@@ -17,6 +17,10 @@ try {
     const deployments_endpoint_base = 'https://api.cloudflare.com/client/v4/accounts/' + cfAccountID + '/pages/projects/' + cfProjectName + '/deployments';
 
     const {result} = got.get(deployments_endpoint_base, request).json();
+
+    forEach(result, (function (deploy) {
+        console.log(deploy.id, deploy.environment, deploy.deployment_trigger.metadata.branch);
+    }));
 
     const payload = JSON.stringify(github.context.payload, undefined, 2)
     console.log(`The event payload: ${payload}`);
