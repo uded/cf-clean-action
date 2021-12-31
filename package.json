@@ -13,9 +13,6 @@
     "@actions/core": "^1.6.0",
     "@actions/github": "^5.0.0",
     "got": "^12.0.0",
-    "ky": "^0.28.7",
-    "ky-universal": "^0.9.1",
-    "lodash.foreach": "^4.5.0",
-    "request": "^2.88.2"
+    "lodash.foreach": "^4.5.0"
   }
 }
