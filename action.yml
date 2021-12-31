@@ -1,0 +1,18 @@
+name: 'Cloudflare Pages cleaner'
+description: 'Clean and sanitize cloudflare pages deployments'
+inputs:
+  cf-email:
+    description: 'Email address used for authentication'
+    required: true
+  cf-token:
+    description: 'Token for Cloudflare'
+    required: true
+  cf-account-id:
+    description: 'Cloudflare account ID'
+    required: true
+  cf-project-name:
+    description: 'Cloudflare Pages project name'
+    required: true
+runs:
+  using: 'node12'
+  main: 'index.js'
