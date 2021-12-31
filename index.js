@@ -1,6 +1,6 @@
-const core = require('@actions/core');
-const github = require('@actions/github');
-const got = require('got');
+import core from '@actions/core';
+import github from '@actions/github';
+import got from 'got';
 // const forEach = require('lodash.forEach');
 
 try {
