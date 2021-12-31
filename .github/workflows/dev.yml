@@ -1,0 +1,17 @@
+name: Development
+
+on:
+  push:
+
+jobs:
+  cf-clean:
+    name: Cloudflare Clean
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clean CF pages
+        uses: uded/cf-clean-action@v0.3.4
+        with:
+          cf-email: ${{ secrets.CF_EMAIL }}
+          cf-token: ${{ secrets.CF_TOKEN }}
+          cf-account-id: 8df387d7827e5626496bcc75e225903e
+          cf-project-name: private-sale-web
