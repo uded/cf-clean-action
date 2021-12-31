@@ -22,7 +22,7 @@ try {
         console.log(deploy.id, deploy.environment, deploy.deployment_trigger.metadata.branch);
     }));
 
-    const payload = JSON.stringify(github.context, undefined, 2)
+    const payload = JSON.stringify(github.context.ref, undefined, 2)
     console.log(`The event payload: ${payload}`);
 } catch (error) {
     core.setFailed(error.message);
