@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Clean CF pages
-        uses: uded/cf-clean-action@v0.3.4
+        uses: ./
         with:
           cf-email: ${{ secrets.CF_EMAIL }}
           cf-token: ${{ secrets.CF_TOKEN }}
