@@ -16,13 +16,9 @@ try {
     const cfProjectName = core.getInput('cf-project-name');
     const deployments_endpoint_base = 'https://api.cloudflare.com/client/v4/accounts/' + cfAccountID + '/pages/projects/' + cfProjectName + '/deployments';
 
-    console.log('URL', deployments_endpoint_base);
-
     const {result} = await got.get(deployments_endpoint_base, request).json();
 
-    console.log('Result', result);
-
-    forEach(result, (function (deploy) {
+    _.forEach(result, (function (deploy) {
         console.log(deploy.id, deploy.environment, deploy.deployment_trigger.metadata.branch);
     }));
 
