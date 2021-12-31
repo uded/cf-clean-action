@@ -18,7 +18,7 @@ try {
 
     console.log('URL', deployments_endpoint_base);
 
-    const {result} = got.get(deployments_endpoint_base, request).json();
+    const {result} = await got.get(deployments_endpoint_base, request).json();
 
     console.log('Result', result);
 
