@@ -1,3 +1,4 @@
+import * as github from "@actions/github";
 import core from '@actions/core';
 import got from 'got';
 import _ from "lodash";
@@ -21,8 +22,8 @@ try {
         console.log(deploy.id, deploy.environment, deploy.deployment_trigger.metadata.branch);
     }));
 
-    // const payload = JSON.stringify(github.context.payload, undefined, 2)
-    // console.log(`The event payload: ${payload}`);
+    const payload = JSON.stringify(github.context, undefined, 2)
+    console.log(`The event payload: ${payload}`);
 } catch (error) {
     core.setFailed(error.message);
 }
