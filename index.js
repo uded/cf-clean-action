@@ -12,6 +12,10 @@ try {
     const cleanOlderThan = core.getInput('clean-older-than');
     const previewOnly = core.getBooleanInput('preview-only');
 
+    console.log('Branch', branch);
+    console.log('CleanOlderThan', cleanOlderThan);
+    console.log('PreviewOnly', previewOnly);
+
     await CloudflareDeleteDeployments(cfEmail, cfToken, cfAccountID, cfProjectName, branch, cleanOlderThan, previewOnly);
 
     const payload = JSON.stringify(github.context.ref, undefined, 2)
