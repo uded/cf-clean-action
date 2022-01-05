@@ -8,7 +8,11 @@ try {
     const cfAccountID = core.getInput('cf-account-id');
     const cfProjectName = core.getInput('cf-project-name');
 
-    await CloudflareDeleteDeployments(cfEmail, cfToken, cfAccountID, cfProjectName);
+    const branch = core.getInput('branch');
+    const cleanOlderThan = core.getInput('clean-older-than');
+    const previewOnly = core.getBooleanInput('preview-only');
+
+    await CloudflareDeleteDeployments(cfEmail, cfToken, cfAccountID, cfProjectName, branch, cleanOlderThan, previewOnly);
 
     const payload = JSON.stringify(github.context.ref, undefined, 2)
     console.log(`The event payload: ${payload}`);

@@ -13,6 +13,17 @@ inputs:
   cf-project-name:
     description: 'Cloudflare Pages project name'
     required: true
+  branch:
+    description: 'A branch that needs to be cleaned out'
+    required: false
+  clean-older-than:
+    description: 'A number of days after which deployments should be cleaned out'
+    default: '0'
+    required: false
+  preview-only:
+    description: 'Should only preview deployments be cleaned out'
+    default: 'true'
+    required: false
 runs:
   using: 'node16'
   main: 'index.js'
